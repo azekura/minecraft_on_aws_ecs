@@ -12,6 +12,14 @@ resource "aws_vpc" "ecs-default" {
   }
 }
 
+resource "aws_internet_gateway" "ecs-default" {
+  tags = {
+    "Description" = "Created for ECS cluster default"
+    "Name"        = "ECS default - InternetGateway"
+  }
+  vpc_id = aws_vpc.ecs-default.id
+}
+
 resource "aws_subnet" "ecs-default" {
   assign_ipv6_address_on_creation = false
   availability_zone               = var.aws-availability-zone
