@@ -47,7 +47,7 @@ resource "aws_ecs_task_definition" "minecraft-on-ecs-task" {
           },
         ]
         essential = true
-        image     = "itzg/minecraft-server:java16"
+        image     = "642986266740.dkr.ecr.ap-northeast-1.amazonaws.com/itabashi-minecraft"
         logConfiguration = {
           logDriver = "awslogs"
           options = {
