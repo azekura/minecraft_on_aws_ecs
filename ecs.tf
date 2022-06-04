@@ -126,3 +126,7 @@ resource "aws_ecs_service" "minecraft-on-ecs-service" {
     "Name" = "minecraft-on-ecs"
   }
 }
+
+resource "aws_cloudwatch_log_group" "minecraft-on-ecs" {
+  name = "/ecs/${var.aws-ecs-task-name}"
+}
